@@ -93,7 +93,7 @@ def annotate_video_with_classes(input_video_path, class_list, save_path, file_na
     class_seconds_list = [None] * len(class_list)
     for i in range(len(class_list)):
         class_name, frame_count = class_list[i]
-        class_seconds_list[i] = (class_name, (frame_count*16) / fps)
+        class_seconds_list[i] = (class_name, round(((frame_count*16) / fps), 2))
     
     # write the class_seconds_list to a JSON file
     config_path = os.path.join(save_path, f"{file_name}_actions_seconds.json")

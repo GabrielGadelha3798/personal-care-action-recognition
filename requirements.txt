@@ -4,6 +4,7 @@ ipykernel
 torch
 torchvision
 opencv-python
+scipy
 numpy
 matplotlib
 tqdm
