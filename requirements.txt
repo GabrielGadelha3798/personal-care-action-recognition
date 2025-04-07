@@ -1,0 +1,9 @@
+av
+seaborn
+ipykernel
+torch
+torchvision
+opencv-python
+numpy
+matplotlib
+tqdm
