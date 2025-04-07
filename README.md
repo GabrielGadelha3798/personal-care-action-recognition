@@ -12,41 +12,41 @@ A seguir, uma visão geral da estrutura do projeto e da função de cada compone
 ```
 personal-care-action-recognition/
 │
-├── checkpoints/                    # Pesos dos modelos salvos durante o treinamento
+├── checkpoints/                        # Pesos dos modelos salvos durante o treinamento
 │
-├── data/                           # Dados utilizados no projeto
-│   ├── Raw/                        # Dataset puro, não processado
-│   ├── Split/                      # Versão processada do dataset
-│   ├── split_info/                 # Arquivos de anotação para treino e teste
-│   ├── split_info-filtered/        # Versão filtrada dos splits
-│   ├── UCF101/                     # Dataset original UCF101 organizado por classes
-│   └── outputs/                    # Vídeos processados e arquivos JSON gerados
+├── data/                               # Dados utilizados no projeto
+│   ├── Raw/                            # Dataset puro, não processado
+│   ├── Split/                          # Versão processada do dataset
+|       ├── split_info/                 # Arquivos de anotação para treino e teste
+|       ├── split_info-filtered/        # Versão filtrada dos splits (apenas classes de interesse)
+|       ├── UCF101/                     # Dataset original UCF101 organizado por classes
+|                  
 │
-├── docs/
-│   ├── planejamento.md             # Documentação de planejamento do projeto
-│   └── planejamento.pdf            # Documento de planejamento detalhado e roadmap
+├── docs/                               # Documentação de planejamento do projeto
+│   ├── planejamento.md             
+│   └── planejamento.pdf            
 │
-├── notebooks/                      # Notebooks de desenvolvimento e análise
-│   ├── EDA.ipynb                   # Análise exploratória dos dados
-│   ├── environment_validation.ipynb# Teste de validação do ambiente e dependências
-│   ├── r3d_18_training.ipynb       # Treinamento do modelo R3D_18
-│   └── video_classification.ipynb  # Testes e geração dos vídeos finais + JSON
+├── notebooks/                          # Notebooks de desenvolvimento e análise
+│   ├── environment_validation.ipynb    # Teste de validação do ambiente e dependências
+│   ├── EDA.ipynb                       # Análise exploratória dos dados
+│   ├── r3d_18_training.ipynb           # Treinamento do modelo R3D_18
+│   └── video_classification.ipynb      # Testes e geração dos vídeos finais + JSON
 │
-├── outputs/                        # Saída final dos vídeos com predições e JSONs
+├── outputs/                        # Vídeos processados e arquivos JSON gerados
 │
-├── src/                            # Scripts principais do projeto
+├── src/                            # Arquivos de código principais do projeto
 │   ├── data/                       # Funções de preparação dos dados
 │   │   ├── data_preparation.py
 │   │   └── ucf101_dataset.py
-│   ├── train/                      # Scripts de treinamento do modelo
+│   ├── train/                      # Funções de treinamento do modelo
 │   │   ├── evaluate.py
 │   │   ├── model.py
 │   │   └── train.py
-│   └── utils/                      # Utilitários e funções de apoio
-│       └── utils.py
-│
-├── video/                          # Processamento de vídeos
-│   └── video_process.py
+│   ├── utils/                      # Utilitários e funções de apoio
+│   |      └── utils.py
+│   |
+|   └── video/                          # Processamento de vídeos
+│       └── video_process.py
 │
 ├── inference.py                    # Script para realizar inferência em novos vídeos
 │
